@@ -321,7 +321,7 @@ class HellMusic(PyTgCalls):
                     if link.startswith("https://t.me/+"):
                         link = link.replace("https://t.me/+", "https://t.me/joinchat/")
                     await hellbot.user.join_chat(link)
-                    await hell.edit_text("Assistant joined the chat! Enjoy your music!")
+                    await hell.edit_text("**Insane Assistant** joined the chat! Enjoy your seemless music!")
                 except UserAlreadyParticipant:
                     pass
                 except Exception as e:
