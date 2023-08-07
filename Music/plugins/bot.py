@@ -16,7 +16,7 @@ from Music.helpers.users import MusicUser
 from Music.utils.youtube import ytube
 
 
-@hellbot.app.on_message(filters.command(["start", "alive"]) & ~Config.BANNED_USERS)
+@hellbot.app.on_message(filters.command(["mstart", "alive"]) & ~Config.BANNED_USERS)
 @check_mode
 async def start(_, message: Message):
     if message.chat.type == ChatType.PRIVATE:
@@ -62,7 +62,7 @@ async def start(_, message: Message):
                     disable_web_page_preview=True,
                 )
                 return
-            elif deep_cmd.startswith("help"):
+            elif deep_cmd.startswith("mhelp"):
                 await message.reply_text(
                     TEXTS.HELP_PM.format(hellbot.app.mention),
                     reply_markup=InlineKeyboardMarkup(Buttons.help_pm_markup()),
@@ -81,7 +81,7 @@ async def start(_, message: Message):
         await message.reply_text(TEXTS.START_GC)
 
 
-@hellbot.app.on_message(filters.command("help") & ~Config.BANNED_USERS)
+@hellbot.app.on_message(filters.command("mhelp") & ~Config.BANNED_USERS)
 async def help(_, message: Message):
     if message.chat.type == ChatType.PRIVATE:
         await message.reply_text(
@@ -97,7 +97,7 @@ async def help(_, message: Message):
         )
 
 
-@hellbot.app.on_message(filters.command("ping") & ~Config.BANNED_USERS)
+@hellbot.app.on_message(filters.command("mping") & ~Config.BANNED_USERS)
 async def ping(_, message: Message):
     start_time = datetime.datetime.now()
     hell = await message.reply_text("Pong!")
