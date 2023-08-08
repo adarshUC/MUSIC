@@ -61,7 +61,10 @@ class TEXTS:
         "**❆** {5}"
     )
     SOURCE = (
-    "callback_data==f"@AADARSH_LEGEND LOL"
+        "**Source 📦:**\n\n"
+        "**Note:** \n__» The source code is private.__\n"
+        "__» JOIN @TOFANI_SUPPORT FOR ANY HELP REGARDING THIS BOT\n\n"
+        "❤️🎶 {0}"
     )
     STATS = (
         "**⤞ Server Stats:**\n"
