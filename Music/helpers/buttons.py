@@ -249,7 +249,7 @@ class MakeButtons:
     def help_pm_markup(self):
         buttons = [
             [
-                self.ikb(text="➊Admins", callback_data="help|admin"),
+                self.ikb(text="➊ Admins", callback_data="help|admin"),
                 self.ikb(text="➋ Users", callback_data="help|user"),
             ],
             [
