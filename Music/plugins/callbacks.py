@@ -213,7 +213,7 @@ async def controler_cb(_, cb: CallbackQuery):
             return
 
 
-@hellbot.app.on_callback_query(filters.regex(r"help") & ~Config.BANNED_USERS)
+@hellbot.app.on_callback_query(filters.regex(r"mhelp") & ~Config.BANNED_USERS)
 async def help_cb(_, cb: CallbackQuery):
     data = cb.data.split("|")[1]
     if data == "admin":
