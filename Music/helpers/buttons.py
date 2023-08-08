@@ -204,7 +204,11 @@ class MakeButtons:
     def source_markup(self):
         buttons = [
             [
-                self.ikb(text="Owner ❤️", url="t.me/tofani_teams"),
+                self.ikb(text="Owner 🖤", url="https://http://t.me/tofani_teams"),
+                self.ikb(text="Support 🎙️", url="https://t.me/HellBot_Chats"),
+            ],
+            [
+                self.ikb(text="My Love ❤️", url="tg://settings"),
             ],
             [
                 self.ikb(text="🔙", callback_data="help|start"),
@@ -226,7 +230,7 @@ class MakeButtons:
         buttons = [
             [
                 self.ikb(text="Help ⚙️", callback_data="help|back"),
-                self.ikb(text="Support 🫰🏻", url="t.me/tofani_support"),
+                self.ikb(text="Source 📦", callback_data="source"),
             ],
             [
                 self.ikb(text="Add Me To Group 👥", url=f"https://t.me/{username}?startgroup=true"),
