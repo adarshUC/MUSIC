@@ -74,7 +74,7 @@ class TEXTS:
         "    __Blocked Users:__ `{3} users`\n"
         "    __Songs Played:__ `{4} songs`\n"
         "    __Active VC:__ `{5} vc`\n\n"
-        "**⤞ Systum Stats:**\n"
+        "**⤞ System Stats:**\n"
         "    __Core:__ `{6} cores`\n"
         "    __CPU Usage:__ `{7}`\n"
         "    __Disk Usage:__ `{8}`\n"
