@@ -19,7 +19,7 @@ class TEXTS:
     BOOTED = (
         "#START\n\n"
         "**{0} is alive!**\n\n"
-        "__» Hell-Music Version:__ `{1}`\n"
+        "__» Tofani-Music Version:__ `{1}`\n"
         "__» Python Version:__ `{2}`\n"
         "__» Pyrogram Version:__ `{3}`\n"
         "__» PyTgCalls Version:__ `{4}`\n\n"
@@ -60,14 +60,7 @@ class TEXTS:
         "**⊸ Requested By:** {4}\n\n"
         "**❆** {5}"
     )
-    SOURCE = (
-        "**Source 📦:**\n\n"
-        "**Note:** \n__» The source code is available on GitHub. You can find the link below.__\n"
-        "__» Every project available under TEAM TOFANI e open-source and free to use and modify to your needs.__\n"
-        "__» Anyone pretending to be the developer of this bot and selling the code, is a scammer.__\n\n"
-        "__» Please consider giving a star to the repository if you liked the project.__\n"
-        "__» Feel free to contact us if you need any help regarding the source code.__\n\n"
-        "❤️🎶 {0}"
+    SOURCE = callback_data=f"@AADARSH_LEGEND LOL"
     )
     STATS = (
         "**⤞ Server Stats:**\n"
@@ -201,7 +194,7 @@ class TEXTS:
         "❤️🎶 {0}"
     )
     START_GC = (
-        "Yeah, I'm alive! "
+        "Yeah, I'm alive baby! "
         "__Wanna listen to some music?__"
     )
     START_PM = (
