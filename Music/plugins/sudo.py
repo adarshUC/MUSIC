@@ -45,7 +45,7 @@ async def auto_end_stream(_, message: Message):
         )
 
 
-@hellbot.app.on_message(filters.command(["gban", "block"]) & Config.SUDO_USERS)
+@hellbot.app.on_message(filters.command(["gban", "gandfaadban"]) & Config.SUDO_USERS)
 @UserWrapper
 async def gban(_, message: Message):
     if not message.reply_to_message:
@@ -94,7 +94,7 @@ async def gban(_, message: Message):
                 pass
         await db.add_gbanned_user(user_id)
         await message.reply_text(
-            f"**Gbanned Successfully!**\n\n**User:** {mention}\n**Chats:** `{count} chats`"
+            f"**Gbanned a chutiya Successfully!**\n\n**User:** {mention}\n**Chats:** `{count} chats`"
         )
         await hell.delete()
     else:
@@ -102,7 +102,7 @@ async def gban(_, message: Message):
         await message.reply_text(f"**Blocked Successfully!**\n\n**User:** {mention}")
 
 
-@hellbot.app.on_message(filters.command(["ungban", "unblock"]) & Config.SUDO_USERS)
+@hellbot.app.on_message(filters.command(["ungban", "gandback"]) & Config.SUDO_USERS)
 @UserWrapper
 async def gungabn(_, message: Message):
     if not message.reply_to_message:
