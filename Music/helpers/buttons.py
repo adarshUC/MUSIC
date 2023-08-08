@@ -204,15 +204,7 @@ class MakeButtons:
     def source_markup(self):
         buttons = [
             [
-                self.ikb(text="Github ❤️", url="https://github.com/The-HellBot"),
-                self.ikb(text="Repo 📦", url="https://github.com/The-HellBot/Music"),
-            ],
-            [
-                self.ikb(text="Under HellBot Network { 🇮🇳 }", url="https://t.me/HellBot_Networks"),
-            ],
-            [
-                self.ikb(text="Support 🎙️", url="https://t.me/HellBot_Chats"),
-                self.ikb(text="Updates 📣", url="https://t.me/Its_HellBot"),
+                self.ikb(text="Owner ❤️", url="t.me/tofani_teams"),
             ],
             [
                 self.ikb(text="🔙", callback_data="help|start"),
@@ -224,7 +216,7 @@ class MakeButtons:
     def start_markup(self, username: str):
         buttons = [
             [
-                self.ikb(text="Start Me 🎵", url=f"https://t.me/{username}?start=start"),
+                self.ikb(text="Start Me 🎵", url=f"https://t.me/{username}?start=mstart"),
                 self.ikb(text="🗑", callback_data="close"),
             ]
         ]
@@ -234,7 +226,7 @@ class MakeButtons:
         buttons = [
             [
                 self.ikb(text="Help ⚙️", callback_data="help|back"),
-                self.ikb(text="Source 📦", callback_data="source"),
+                self.ikb(text="Support 🫰🏻", url="t.me/tofani_support"),
             ],
             [
                 self.ikb(text="Add Me To Group 👥", url=f"https://t.me/{username}?startgroup=true"),
@@ -257,15 +249,15 @@ class MakeButtons:
     def help_pm_markup(self):
         buttons = [
             [
-                self.ikb(text="➊ Admins", callback_data="help|admin"),
-                self.ikb(text="➋ Users", callback_data="help|user"),
+                self.ikb(text="Admins", callback_data="help|admin"),
+                self.ikb(text="Users", callback_data="help|user"),
             ],
             [
-                self.ikb(text="➌ Sudos", callback_data="help|sudo"),
-                self.ikb(text="➍ Others", callback_data="help|others"),
+                self.ikb(text="Sudos", callback_data="help|sudo"),
+                self.ikb(text="Others", callback_data="help|others"),
             ],
             [
-                self.ikb(text="➎ Owner", callback_data="help|owner"),
+                self.ikb(text="Owner", callback_data="help|owner"),
             ],
             [
                 self.ikb(text="🔙", callback_data="help|start"),
