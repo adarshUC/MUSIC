@@ -216,7 +216,7 @@ class MakeButtons:
     def start_markup(self, username: str):
         buttons = [
             [
-                self.ikb(text="Start Me 🎵", url=f"https://t.me/{username}?start=mstart"),
+                self.ikb(text="Start Me 🎵", url=f"https://t.me/{username}?start=start"),
                 self.ikb(text="🗑", callback_data="close"),
             ]
         ]
@@ -240,7 +240,7 @@ class MakeButtons:
     def help_gc_markup(self, username: str):
         buttons = [
             [
-                self.ikb(text="Get Help ❓", url=f"https://t.me/{username}?start=mhelp"),
+                self.ikb(text="Get Help ❓", url=f"https://t.me/{username}?start=help"),
                 self.ikb(text="🗑", callback_data="close"),
             ]
         ]
