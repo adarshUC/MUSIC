@@ -16,7 +16,7 @@ from Music.helpers.users import MusicUser
 from Music.utils.youtube import ytube
 
 
-@hellbot.app.on_message(filters.command(["mstart", "alive"]) & ~Config.BANNED_USERS)
+@hellbot.app.on_message(filters.command(["mstart"]) & ~Config.BANNED_USERS)
 @check_mode
 async def start(_, message: Message):
     if message.chat.type == ChatType.PRIVATE:
