@@ -60,7 +60,8 @@ class TEXTS:
         "**⊸ Requested By:** {4}\n\n"
         "**❆** {5}"
     )
-    SOURCE = (callback_data=f"@AADARSH_LEGEND LOL"
+    SOURCE = (
+    "callback_data=f"@AADARSH_LEGEND LOL"
     )
     STATS = (
         "**⤞ Server Stats:**\n"
