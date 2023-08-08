@@ -249,15 +249,15 @@ class MakeButtons:
     def help_pm_markup(self):
         buttons = [
             [
-                self.ikb(text="Admins", callback_data="help|admin"),
-                self.ikb(text="Users", callback_data="help|user"),
+                self.ikb(text="➊Admins", callback_data="help|admin"),
+                self.ikb(text="➋ Users", callback_data="help|user"),
             ],
             [
-                self.ikb(text="Sudos", callback_data="help|sudo"),
-                self.ikb(text="Others", callback_data="help|others"),
+                self.ikb(text="➌ Sudos", callback_data="help|sudo"),
+                self.ikb(text="➍ Others", callback_data="help|others"),
             ],
             [
-                self.ikb(text="Owner", callback_data="help|owner"),
+                self.ikb(text="➎ Owner", callback_data="help|owner"),
             ],
             [
                 self.ikb(text="🔙", callback_data="help|start"),
