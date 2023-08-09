@@ -1,5 +1,4 @@
 import asyncio
-import random
 
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, Message
@@ -26,15 +25,8 @@ from Music.utils.youtube import ytube
 @check_mode
 @PlayWrapper
 async def play_music(_, message: Message, context: dict):
-    user_name = message.from_user.first_name
-    user_id = message.from_user.id
-    if not await db.is_user_exist(user_id):
-        await db.add_user(user_id, user_name)
-    else:
-        try:
-            await db.update_user(user_id, "user_name", user_name)
-        except:
-            pass
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(message.from_user.id, message.from_user.first_name)
     hell = await message.reply_text("Processing ...")
     # initialise variables
     video, force, url, tgaud, tgvid = context.values()
@@ -101,15 +93,7 @@ async def play_music(_, message: Message, context: dict):
         if not ytube.check(url):
             return await hell.edit("Invalid YouTube URL.")
         if "playlist" in url:
-            await hell.edit("Processing the playlist ...")
-            song_list = await ytube.get_playlist(url)
-            random.shuffle(song_list)
-            context = {
-                "user_id": message.from_user.id,
-                "user_mention": message.from_user.mention,
-            }
-            await player.playlist(hell, context, song_list, video)
-            return
+            return await hell.edit("Playlist links are not supported yet.")
         try:
             await hell.edit("Searching ...")
             result = await ytube.get_data(url, False)
@@ -203,7 +187,7 @@ async def queued_tracks(_, message: Message):
     await MakePages.queue_page(hell, collection, 0, 0, True)
 
 
-@hellbot.app.on_message(filters.command(["clean", "reload"]) & ~Config.BANNED_USERS)
+@hellbot.app.on_message(filters.command("clean") & ~Config.BANNED_USERS)
 @AuthWrapper
 async def clean_queue(_, message: Message):
     Queue.clear_queue(message.chat.id)
