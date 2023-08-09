@@ -160,7 +160,7 @@ class Player:
         await db.update_user(user_id, "songs_played", 1)
         chat_name = (await hellbot.app.get_chat(chat_id)).title
         await hellbot.logit(
-            f"play {vc_type}",
+            f"play {vc_type}"
             f"**⤷ Song:** `{title}` \n**⤷ Chat:** {chat_name} [`{chat_id}`] \n**⤷ User:** {user}",
         )
 
@@ -223,20 +223,21 @@ class Player:
         await message.delete()
 
     async def playlist(
-        self, message: Message, user_dict: dict, collection: list, video: bool = False
+        self, message: Message, user_id: int, collection: list, video: bool = False
     ):
+        hell = await message.edit_text("Playing your favorites ...")
         vc_type = "video" if video else "voice"
         count = failed = 0
-        user_id, user_mention = user_dict.values()
         if await db.is_active_vc(message.chat.id):
-            await message.edit_text(
-                "This chat have an active vc. Adding songs from playlist in the queue... \n\n__This might take some time!__"
+            await hell.edit_text(
+                "This chat have an active vc. Adding your favorites in the queue... \n\n__This might take some time!__"
             )
         previously = len(Queue.get_queue(message.chat.id))
         for i in collection:
             try:
                 data = (await ytube.get_data(i, True, 1))[0]
                 if count == 0 and previously == 0:
+                    LOGS.info("Playing first song")
                     file_path = await ytube.download(data["id"], True, video)
                     _queue = Queue.put_queue(
                         message.chat.id,
@@ -244,7 +245,7 @@ class Player:
                         data["duration"],
                         file_path,
                         data["title"],
-                        user_mention,
+                        message.from_user.mention,
                         data["id"],
                         vc_type,
                         False,
@@ -253,7 +254,7 @@ class Player:
                         photo = thumb.generate((359), (297, 302), data["id"])
                         await hellmusic.join_vc(message.chat.id, file_path, video)
                     except Exception as e:
-                        await message.edit_text(str(e))
+                        await hell.edit_text(str(e))
                         Queue.clear_queue(message.chat.id)
                         os.remove(file_path)
                         os.remove(photo)
@@ -269,7 +270,7 @@ class Player:
                                 hellbot.app.mention,
                                 data["title"],
                                 data["duration"],
-                                user_mention,
+                                message.from_user.mention,
                             ),
                             reply_markup=InlineKeyboardMarkup(btns),
                         )
@@ -281,7 +282,7 @@ class Player:
                                 hellbot.app.mention,
                                 data["title"],
                                 data["duration"],
-                                user_mention,
+                                message.from_user.mention,
                             ),
                             reply_markup=InlineKeyboardMarkup(btns),
                         )
@@ -299,7 +300,7 @@ class Player:
                         data["duration"],
                         data["id"],
                         data["title"],
-                        user_mention,
+                        message.from_user.mention,
                         data["id"],
                         vc_type,
                         False,
@@ -308,7 +309,7 @@ class Player:
             except Exception as e:
                 LOGS.error(str(e))
                 failed += 1
-        await message.edit_text(
+        await hell.edit_text(
             f"**Added all tracks to queue!** \n\n**Total tracks: `{count}`** \n**Failed: `{failed}`**"
         )
 
