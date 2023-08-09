@@ -205,13 +205,17 @@ class MakeButtons:
         buttons = [
             [
                 self.ikb(text="Developer ‍💻", url="https://t.me/aadarsh_legend"),
-                self.ikb(text="My Love ❤️", url="tg://settings"),
+                self.ikb(text="My Love ❤", url="tg://settings"),
             ],
             [
                 self.ikb(text="Support 🎙️", url="https://t.me/tofani_support"),
             ],
             [
-                self.ikb(text="🔙", callback_data="start"),
+                self.ikb(text="MAGIC 1", callback_data="close"),
+                self.ikb(text="MAGIC 2", url="http://t.me/share/url?url=📣+JALDI+WAHA+SE+HTO"),
+            ],
+            [
+                self.ikb(text="🔙", callback_data="help|start"),
                 self.ikb(text="🗑", callback_data="close"),
             ]
         ]
@@ -229,7 +233,7 @@ class MakeButtons:
     def start_pm_markup(self, username: str):
         buttons = [
             [
-                self.ikb(text="Help ⚙️", callback_data="help"),
+                self.ikb(text="Help ⚙️", callback_data="help|back"),
                 self.ikb(text="Source 📦", callback_data="source"),
             ],
             [
@@ -253,18 +257,18 @@ class MakeButtons:
     def help_pm_markup(self):
         buttons = [
             [
-                self.ikb(text="➊ Admins", callback_data="admin"),
-                self.ikb(text="➋ Users", callback_data="user"),
+                self.ikb(text="➊ Admins", callback_data="help|admin"),
+                self.ikb(text="➋ Users", callback_data="help|user"),
             ],
             [
-                self.ikb(text="➌ Sudos", callback_data="sudo"),
-                self.ikb(text="➍ Others", callback_data="others"),
+                self.ikb(text="➌ Sudos", callback_data="help|sudo"),
+                self.ikb(text="➍ Others", callback_data="help|others"),
             ],
             [
-                self.ikb(text="➎ Owner", callback_data="owner"),
+                self.ikb(text="➎ Owner", callback_data="help|owner"),
             ],
             [
-                self.ikb(text="🔙", callback_data="start"),
+                self.ikb(text="🔙", callback_data="help|start"),
                 self.ikb(text="🗑", callback_data="close"),
             ],
         ]
@@ -273,7 +277,7 @@ class MakeButtons:
     def help_back(self):
         buttons = [
             [
-                self.ikb(text="🔙", callback_data="help"),
+                self.ikb(text="🔙", callback_data="help|back"),
                 self.ikb(text="🗑", callback_data="close"),
             ]
         ]
