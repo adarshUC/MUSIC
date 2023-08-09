@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton
 
 class MakeButtons:
     def __init__(self):
-        self.ikb = InlineKeyboardButton()
+        self.ikb = InlineKeyboardButton
 
     def close_markup(self):
         buttons = [[self.ikb("🗑", callback_data="close")]]
