@@ -126,7 +126,7 @@ class MakeButtons:
         if video_id == "telegram":
             buttons = [
                 [
-                    self.ikb("🎛️", callback_data=f"controls|{video_id}|{chat_id}"),
+                    self.ikb("🎛", callback_data=f"controls|{video_id}|{chat_id}"),
                     self.ikb("🗑", callback_data="close"),
                 ]
             ]
@@ -137,7 +137,7 @@ class MakeButtons:
                 ],
                 [
                     self.ikb("❤️", callback_data=f"add_favorite|{video_id}"),
-                    self.ikb("🎛️", callback_data=f"controls|{video_id}|{chat_id}"),
+                    self.ikb("🎛", callback_data=f"controls|{video_id}|{chat_id}"),
                 ],
                 [
                     self.ikb("🗑", callback_data="close"),
@@ -204,15 +204,12 @@ class MakeButtons:
     def source_markup(self):
         buttons = [
             [
-                self.ikb(text="Github ❤️", url="https://github.com/The-HellBot"),
-                self.ikb(text="Repo 📦", url="https://github.com/The-HellBot/Music"),
+                self.ikb(text="Developer ‍💻", url="https://t.me/aadarsh_legend"),
+                self.ikb(text="My Love ❤️", url="tg://settings"),
             ],
             [
-                self.ikb(text="Under HellBot Network { 🇮🇳 }", url="https://t.me/HellBot_Networks"),
-            ],
-            [
-                self.ikb(text="Support 🎙️", url="https://t.me/HellBot_Chats"),
-                self.ikb(text="Updates 📣", url="https://t.me/Its_HellBot"),
+                self.ikb(text="Support 🎙", url="https://t.me/tofani_support"),
+                self.ikb(text="📣", url="http://t.me/share/url?url=📣+JALDI+WAHA+SE+HTO"),
             ],
             [
                 self.ikb(text="🔙", callback_data="help|start"),
