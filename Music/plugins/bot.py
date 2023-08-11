@@ -62,7 +62,7 @@ async def start(_, message: Message):
                     disable_web_page_preview=True,
                 )
                 return
-            elif deep_cmd.startswith("mhelp"):
+            elif deep_cmd.startswith("help"):
                 await message.reply_text(
                     TEXTS.HELP_PM.format(hellbot.app.mention),
                     reply_markup=InlineKeyboardMarkup(Buttons.help_pm_markup()),
