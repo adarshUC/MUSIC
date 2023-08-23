@@ -245,8 +245,10 @@ class MakeButtons:
     def help_gc_markup(self, username: str):
         buttons = [
             [
-                self.ikb(text="Get Help ❓", url=f"https://t.me/{username}?start=help"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="sᴛᴀʀᴛ ɪɴ ᴘʀɪᴠᴀᴛᴇ", url=f"https://t.me/{username}?start=help"),
+            ],
+            [   
+                self.ikb(text="ᴏᴘᴇɴ ʜᴇʀᴇ", callback_data="help|back")
             ]
         ]
         return buttons
