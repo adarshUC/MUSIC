@@ -23,7 +23,7 @@ from Music.utils.exceptions import (
     UserException,
 )
 from Music.utils.queue import Queue
-from Music.utils.thumbnail import thumb
+from Music.utils.thumbnail import thumbnail
 from Music.utils.youtube import ytube
 
 from .clients import hellbot
@@ -190,7 +190,7 @@ class HellMusic(PyTgCalls):
             else:
                 input_stream = AudioPiped(to_stream, MediumQualityAudio())
             try:
-                photo = thumb.generate((359), (297, 302), video_id)
+                photo = thumbnail.generate((359), (297, 302), video_id)
                 await self.music.change_stream(int(chat_id), input_stream)
                 btns = Buttons.player_markup(
                     chat_id,
