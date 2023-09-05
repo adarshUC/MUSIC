@@ -13,7 +13,7 @@ from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import MediumQualityAudio, MediumQualityVideo
 
-from Music.utils.thumbnail import get_thumb
+from Music.utils.thumbnail import thumb
 
 from config import Config
 from Music.helpers.buttons import Buttons
@@ -191,7 +191,7 @@ class HellMusic(PyTgCalls):
             else:
                 input_stream = AudioPiped(to_stream, MediumQualityAudio())
             try:
-                photo = get_thumb.generate((359), (297, 302), video_id)
+                photo = thumb.generate((359), (297, 302), video_id)
                 await self.music.change_stream(int(chat_id), input_stream)
                 btns = Buttons.player_markup(
                     chat_id,
