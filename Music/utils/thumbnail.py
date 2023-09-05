@@ -7,8 +7,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from unidecode import unidecode
 from youtubesearchpython.__future__ import VideosSearch
 
-from config import YOUTUBE_IMG_URL
-
+from config import Config
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
@@ -117,4 +116,4 @@ async def get_thumb(videoid):
         return f"cache/{videoid}.png"
     except Exception as e:
         print(e)
-        return YOUTUBE_IMG_URL
+        return Config.TELEGRAM_IMG
