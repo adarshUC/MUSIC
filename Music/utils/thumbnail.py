@@ -117,3 +117,4 @@ async def get_thumb(videoid):
     except Exception as e:
         print(e)
         return Config.TELEGRAM_IMG
+thumb = Thumbnail()
