@@ -20,6 +20,10 @@
             "description": "Get this value from my.telegram.org",
             "value": ""
         },
+		"YOUTUBE_IMG_URL": {
+			"description": " ok",
+			"value": "https://te.legra.ph/file/63bd64da528aa18bbc6ea.jpg"
+		},
 		"API_ID": {
 			"description": "Get this value from my.telegram.org",
 			"value": ""
