@@ -12,7 +12,7 @@ from Music.helpers.buttons import Buttons
 from Music.helpers.strings import TEXTS
 
 from .queue import Queue
-from .thumbnail import thumb
+from .thumbnail import get_thumb
 from .youtube import ytube
 
 
@@ -92,7 +92,7 @@ class Player:
             force,
         )
         if position == 0:
-            photo = thumb.generate((359), (297, 302), video_id)
+            photo = get_thumb.generate((359), (297, 302), video_id)
             try:
                 await hellmusic.join_vc(
                     chat_id, file_path, True if vc_type == "video" else False
@@ -174,7 +174,7 @@ class Player:
         if not que:
             return await message.edit_text("Nothing is playing to replay")
         video = True if que["vc_type"] == "video" else False
-        photo = thumb.generate((359), (297, 302), que["video_id"])
+        photo = get_thumb.generate((359), (297, 302), que["video_id"])
         if que["file"] == que["video_id"]:
             file_path = await ytube.download(que["video_id"], True, video)
         else:
@@ -250,7 +250,7 @@ class Player:
                         False,
                     )
                     try:
-                        photo = thumb.generate((359), (297, 302), data["id"])
+                        photo = get_thumb.generate((359), (297, 302), data["id"])
                         await hellmusic.join_vc(message.chat.id, file_path, video)
                     except Exception as e:
                         await message.edit_text(str(e))
