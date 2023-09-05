@@ -29,7 +29,7 @@ class Config(object):
     TG_AUDIO_SIZE_LIMIT = int(getenv("TG_AUDIO_SIZE_LIMIT", 104857600))     # size in bytes. 0 for no limit
     TG_VIDEO_SIZE_LIMIT = int(getenv("TG_VIDEO_SIZE_LIMIT", 1073741824))    # size in bytes. 0 for no limit
     TZ = getenv("TZ", "Asia/Kolkata")   # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
+    YOUTUBE_IMG_URL = "https://te.legra.ph/file/63bd64da528aa18bbc6ea.jpg"
     # do not edit these variables
     BANNED_USERS = filters.user()
     CACHE = {}
