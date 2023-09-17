@@ -16,7 +16,7 @@ from Music.helpers.users import MusicUser
 from Music.utils.youtube import ytube
 
 
-@hellbot.app.on_message(filters.command(["mstart"]) & ~Config.BANNED_USERS)
+@hellbot.app.on_message(filters.command(["start"]) & ~Config.BANNED_USERS)
 @check_mode
 async def start(_, message: Message):
     if message.chat.type == ChatType.PRIVATE:
@@ -68,17 +68,17 @@ async def start(_, message: Message):
                     reply_markup=InlineKeyboardMarkup(Buttons.help_pm_markup()),
                 )
                 return
-        await message.reply_text(
-            TEXTS.START_PM.format(
-                message.from_user.first_name,
-                hellbot.app.mention,
-                hellbot.app.username,
-            ),
-            reply_markup=InlineKeyboardMarkup(Buttons.start_pm_markup(hellbot.app.username)),
-            disable_web_page_preview=True,
-        )
-    elif message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
-        await message.reply_text(TEXTS.START_GC)
+        # await message.reply_text(
+            # TEXTS.START_PM.format(
+                # message.from_user.first_name,
+                # hellbot.app.mention,
+                # hellbot.app.username,
+            # ),
+            # reply_markup=InlineKeyboardMarkup(Buttons.start_pm_markup(hellbot.app.username)),
+            # disable_web_page_preview=True,
+        # )
+    # elif message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
+        # await message.reply_text(TEXTS.START_GC)
 
 
 @hellbot.app.on_message(filters.command("mhelp") & ~Config.BANNED_USERS)
