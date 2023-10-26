@@ -1,20 +1,16 @@
 {
-	"name": "HellMusic",
+	"name": "Music",
 	"description": "A telegram voice chat music player bot by The-Hellbot, coded in python using Pyrogram and PyTgCalls",
-	"logo": "https://te.legra.ph/file/7decf235312af8536e9aa.jpg",
 	"keywords": [
 		"telegram",
 		"musicbot",
 		"python",
 		"pyrogram",
 		"pytgcalls",
-		"hellbot",
 		"modular",
 		"productivity",
 		"music",
-		"hellbot"
 	],
-	"repository": "https://github.com/The-HellBot/HellMusic/",
 	"env": {
         "API_HASH": {
             "description": "Get this value from my.telegram.org",
@@ -29,8 +25,8 @@
 			"value": ""
 		},
 		"BOT_NAME": {
-			"description": "Name of bot to display on Thumbnail. Don't use fancy texts. Use plain text only.",
-			"value": "@Music_HellBot"
+			"description": "Name of bot to display on Thumbnail. Don't use fancy texts. Use plain text only. umm, you can put username too",
+			"value": ""
 		},
 		"BOT_TOKEN": {
 			"description": "Make a bot from @BotFather and paste the bot token here.",
