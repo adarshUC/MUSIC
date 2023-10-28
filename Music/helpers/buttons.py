@@ -204,11 +204,11 @@ class MakeButtons:
     def source_markup(self):
         buttons = [
             [
-                self.ikb(text="Developer ‍💻", url="https://t.me/aadarsh_legend"),
+                self.ikb(text="Developer ‍💻", url="t.me/username"),
                 self.ikb(text="My Love ❤️", url="tg://settings"),
             ],
             [
-                self.ikb(text="Support 🎙", url="https://t.me/tofani_support"),
+                self.ikb(text="Support 🎙", url="https://t.me/DemoSupportGroup"),
                 self.ikb(text="📣", url="http://t.me/share/url?url=📣+JALDI+WAHA+SE+HTO"),
             ],
             [
